@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
-import { StickyAppointmentCTA } from '@/components/StickyAppointmentCTA'
 import { JsonLd } from '@/components/JsonLd'
 import { siteContent } from '@/lib/content'
 
@@ -53,7 +52,18 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
-        <StickyAppointmentCTA />
+        {/* Mobile fixed-bottom "Call Now" bar — full-width, never overlaps content */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
+          <a
+            href={`tel:${siteContent.phone}`}
+            className="flex items-center justify-center w-full py-4 text-white font-bold text-base tracking-wide shadow-2xl cursor-pointer"
+            style={{ backgroundColor: siteContent.primaryColor }}
+          >
+            Call Now — {siteContent.phone}
+          </a>
+        </div>
+        {/* Spacer so content isn't hidden behind the fixed bottom bar on mobile */}
+        <div className="h-14 lg:hidden" aria-hidden="true" />
       </body>
     </html>
   )
