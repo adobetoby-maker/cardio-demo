@@ -1,0 +1,377 @@
+export interface Testimonial {
+  name: string;
+  text: string;
+  rating: number;
+}
+
+export interface ServiceItem {
+  name: string;
+  description: string;
+  icon: string;
+}
+
+export interface ConditionItem {
+  name: string;
+  description: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  keyword: string;
+  author: string;
+  date: string;
+  readTime: string;
+  body: string;
+}
+
+export interface SiteContent {
+  practiceName: string;
+  tagline: string;
+  specialty: string;
+  patientJourney: string;
+  city: string;
+  state: string;
+  zip: string;
+  address: string;
+  phone: string;
+  email: string;
+  website: string;
+  physicianName: string;
+  physicianTitle: string;
+  physicianYears: string;
+  physicianBio: string;
+  physicianEducation: string;
+  services: ServiceItem[];
+  conditions: ConditionItem[];
+  testimonials: Testimonial[];
+  insurance: string[];
+  story: string;
+  mission: string;
+  patientPortalUrl: string;
+  faq: { question: string; answer: string }[];
+  availableSlots: string;
+  bookingNote: string;
+  heroImageAlt: string;
+  seoTitle: string;
+  seoDescription: string;
+  seoKeywords: string;
+  primaryColor: string;
+  secondaryColor: string;
+  accentColor: string;
+  bgLightColor: string;
+  medicalSpecialty: string;
+  schemaType: string;
+  jsonLd: Record<string, unknown>;
+}
+
+export const siteContent: SiteContent = {
+  // [DEMO] replace with real practice name
+  practiceName: 'Twin Falls Heart & Vascular',
+  tagline: 'Advanced Cardiac Care — Protecting Your Heart Health',
+  specialty: 'Cardiology',
+  patientJourney:
+    'From your first consultation through ongoing cardiac management, we provide comprehensive, compassionate heart care every step of the way.',
+
+  // [DEMO] replace with real address details
+  city: 'Twin Falls',
+  state: 'Idaho',
+  zip: '83301',
+  address: '240 Hospital Drive Suite 305',
+  // [DEMO] replace with real phone number
+  phone: '(208) 555-0312',
+  // [DEMO] replace with real email address
+  email: 'info@tfheartandvascular.com',
+  // [DEMO] replace with real website URL
+  website: 'https://tfheartandvascular.com',
+
+  // [DEMO] replace with real physician details
+  physicianName: 'Dr. Robert Patel',
+  physicianTitle: 'MD, FACC — Board-Certified Interventional Cardiologist',
+  physicianYears: '22',
+  physicianBio:
+    "Dr. Robert Patel is a board-certified interventional cardiologist with 22 years of experience treating complex cardiovascular conditions. After completing his fellowship at the Cleveland Clinic — one of the world's foremost cardiac centers — he brought that expertise to the Magic Valley region. Dr. Patel specializes in minimally invasive cardiac procedures, coronary intervention, and structural heart disease. He is known for his thorough, patient-centered approach and his commitment to keeping Southern Idaho residents close to home for world-class cardiac care.",
+  // [DEMO] replace with real education details
+  physicianEducation:
+    'MD, Johns Hopkins University School of Medicine; Residency, Internal Medicine, Mayo Clinic; Fellowship, Interventional Cardiology, Cleveland Clinic',
+
+  services: [
+    {
+      // [DEMO] verify service details with physician
+      name: 'EKG & Cardiac Monitoring',
+      description:
+        'Comprehensive electrocardiogram testing and long-term cardiac rhythm monitoring, including Holter monitors and event recorders to detect arrhythmias and electrical abnormalities.',
+      icon: 'heart-pulse',
+    },
+    {
+      name: 'Stress Testing',
+      description:
+        'Exercise and pharmacologic stress tests with nuclear imaging to evaluate blood flow to the heart, identify coronary artery disease, and assess cardiac function under exertion.',
+      icon: 'activity',
+    },
+    {
+      name: 'Echocardiogram',
+      description:
+        "Advanced ultrasound imaging of the heart's chambers, valves, and pumping function. Includes transthoracic and transesophageal echocardiography for detailed structural assessment.",
+      icon: 'scan-heart',
+    },
+    {
+      name: 'Cardiac Catheterization',
+      description:
+        'Minimally invasive procedure using a thin catheter to visualize coronary arteries, measure pressures inside the heart, and deliver treatments such as stent placement directly at the site of blockage.',
+      icon: 'zap',
+    },
+    {
+      name: 'Pacemaker Implantation',
+      description:
+        'Surgical implantation and ongoing management of pacemakers and implantable cardioverter-defibrillators (ICDs) for patients with bradycardia, heart block, or high risk of sudden cardiac arrest.',
+      icon: 'radio',
+    },
+    {
+      name: 'Heart Failure Management',
+      description:
+        'Individualized treatment plans for chronic and acute heart failure, combining medication optimization, lifestyle counseling, remote monitoring, and coordination with cardiac rehabilitation.',
+      icon: 'shield-heart',
+    },
+    {
+      name: 'Atrial Fibrillation Treatment',
+      description:
+        'Complete AFib care from diagnosis to advanced therapies — including rate control, rhythm control, anticoagulation management, cardioversion, and catheter ablation referral when appropriate.',
+      icon: 'waves',
+    },
+    {
+      name: 'Peripheral Artery Disease',
+      description:
+        'Diagnosis and treatment of PAD affecting the legs and feet, including ankle-brachial index testing, duplex ultrasound, and endovascular interventions to restore blood flow and prevent limb complications.',
+      icon: 'git-branch',
+    },
+  ],
+
+  conditions: [
+    {
+      // [DEMO] verify condition descriptions with physician
+      name: 'Coronary Artery Disease',
+      description:
+        "Narrowing or blockage of the arteries that supply blood to the heart, often caused by plaque buildup. The leading cause of heart attacks in the United States.",
+    },
+    {
+      name: 'Heart Failure',
+      description:
+        "A chronic condition in which the heart cannot pump enough blood to meet the body's needs. Managed through medication, lifestyle changes, and in some cases devices or surgery.",
+    },
+    {
+      name: 'Atrial Fibrillation',
+      description:
+        'An irregular, often rapid heart rhythm that can cause palpitations, fatigue, and significantly increases stroke risk. Highly treatable with modern therapies.',
+    },
+    {
+      name: 'Hypertension',
+      description:
+        'Persistently elevated blood pressure that strains the heart and blood vessels over time, increasing risk of heart attack, stroke, and kidney disease.',
+    },
+    {
+      name: 'Aortic Stenosis',
+      description:
+        "Narrowing of the aortic valve opening that restricts blood flow from the heart to the body. May require valve replacement when symptoms develop.",
+    },
+    {
+      name: 'Deep Vein Thrombosis',
+      description:
+        'Blood clots that form in the deep veins, typically in the legs. Dangerous if a clot travels to the lungs, causing a pulmonary embolism.',
+    },
+    {
+      name: 'Peripheral Arterial Disease',
+      description:
+        'Narrowed arteries reduce blood flow to the limbs, causing leg pain when walking and increasing risk of non-healing wounds and limb loss.',
+    },
+    {
+      name: 'Cardiomyopathy',
+      description:
+        'Disease of the heart muscle that makes it harder to pump blood. Types include dilated, hypertrophic, and restrictive, each requiring tailored management.',
+    },
+  ],
+
+  testimonials: [
+    {
+      // [DEMO] replace with real patient testimonials (obtain written consent)
+      name: 'Gary M.',
+      text: "I came in thinking I had indigestion. Dr. Patel caught a 90% blockage in my LAD — I was days away from a major heart attack. The cath lab team was incredible, and I was back home in two days. I owe Dr. Patel my life, plain and simple.",
+      rating: 5,
+    },
+    {
+      // [DEMO] replace with real patient testimonial
+      name: 'Linda T.',
+      text: "After my AFib diagnosis I was terrified. Dr. Patel sat with me for nearly an hour explaining everything — the stroke risk, the medication options, what to watch for. Two years later my rhythm is controlled and I'm back hiking in the Sawtooths. I couldn't be more grateful.",
+      rating: 5,
+    },
+    {
+      // [DEMO] replace with real patient testimonial
+      name: 'Ron & Carol S.',
+      text: "My husband has a strong family history of heart disease. Dr. Patel ordered a coronary calcium scan that flagged a problem we didn't know was brewing. We caught it early, changed his diet and medications, and avoided what could have been a disaster. Proactive medicine at its best.",
+      rating: 5,
+    },
+    {
+      // [DEMO] replace with real patient testimonial
+      name: 'Maria V.',
+      text: "I drove from Burley because my local doctor said I needed to see an interventional cardiologist. From the front desk to the follow-up call, every single person made me feel cared for. Dr. Patel is straightforward and thorough — exactly what you want when your heart is involved.",
+      rating: 5,
+    },
+  ],
+
+  // [DEMO] verify insurance list with billing department
+  insurance: [
+    'Blue Cross Blue Shield',
+    'Aetna',
+    'Cigna',
+    'United Healthcare',
+    'Medicare',
+    'Regence',
+    'SelectHealth',
+    'Tricare',
+  ],
+
+  // [DEMO] verify practice story with physician/office manager
+  story:
+    "Twin Falls Heart & Vascular was founded on a single conviction: Southern Idaho families deserve access to the same caliber of cardiac care available at the nation's top medical centers — without the burden of traveling to Boise or Salt Lake City. Dr. Robert Patel returned to the Magic Valley after his Cleveland Clinic fellowship with that mission in mind, and over the past two decades has built a practice that combines cutting-edge interventional capabilities with the personal attention of a community-based physician.",
+
+  mission:
+    'To deliver compassionate, evidence-based cardiovascular care that keeps our neighbors healthy, active, and close to the people they love.',
+
+  // [DEMO] replace with real patient portal URL
+  patientPortalUrl: 'https://portal.tfheartandvascular.com',
+
+  faq: [
+    {
+      // [DEMO] review FAQ answers with physician before publishing
+      question: 'When should I go to the ER versus calling a cardiologist?',
+      answer:
+        'Call 911 immediately for chest pain or pressure lasting more than a few minutes, pain spreading to your arm, jaw, or back, sudden shortness of breath, loss of consciousness, or a rapid irregular heartbeat accompanied by dizziness. These are potential heart attack or life-threatening arrhythmia symptoms. Contact our office for non-emergency concerns such as new or worsening shortness of breath with mild exertion, unexplained fatigue, leg swelling, or palpitations that come and go without other symptoms. When in doubt, err on the side of calling 911.',
+    },
+    {
+      question: 'What is an EKG and does it hurt?',
+      answer:
+        "An electrocardiogram (EKG or ECG) records the electrical activity of your heart using small adhesive electrodes placed on your chest, arms, and legs. The test takes about 10 minutes, is completely painless, and produces a tracing that shows your heart's rhythm and can detect signs of prior heart attack, enlargement, or electrical abnormalities. No needles, no radiation, no discomfort.",
+    },
+    {
+      question: 'My doctor prescribed a statin. Do I really need it?',
+      answer:
+        "Statins are among the most well-studied medications in medicine. For patients with established heart disease or high cardiovascular risk, they have been shown to reduce the risk of heart attack and stroke by 25–35%. Side effects such as muscle aches affect a minority of patients and are usually resolved by adjusting the dose or switching to a different statin. We review every patient's individual risk profile and have an honest conversation about whether the benefit outweighs any potential downsides.",
+    },
+    {
+      question: 'What diet changes actually make a difference for heart health?',
+      answer:
+        'The Mediterranean diet has the strongest evidence base: emphasize vegetables, fruits, whole grains, legumes, nuts, olive oil, and fish; limit red meat, processed foods, and refined sugars. Reducing sodium is particularly important for blood pressure control. Small, consistent changes — cutting out sugary drinks, switching from butter to olive oil, adding one fish meal per week — add up significantly over time. We offer dietary counseling referrals for patients who want structured guidance.',
+    },
+    {
+      question: 'Can I still exercise if I have heart disease?',
+      answer:
+        'In most cases, yes — and regular moderate exercise is one of the most powerful therapies available for heart disease. We individualize exercise recommendations based on your condition, recent procedures, and functional status. Many patients benefit from a supervised cardiac rehabilitation program before returning to independent exercise. The goal is always to keep you as active and healthy as possible, not to keep you on the sideline.',
+    },
+    {
+      question: 'Do you offer telehealth visits for cardiology follow-ups?',
+      answer:
+        'Yes. Telehealth video visits are available for established patients for medication management, result reviews, and routine follow-ups. They are not appropriate for new cardiac symptoms requiring an in-person exam or monitoring. Contact our office to determine whether your next visit qualifies for telehealth. Video visits use a HIPAA-compliant platform and most major insurers cover them at the same rate as in-person visits.',
+    },
+  ],
+
+  // [DEMO] verify appointment availability with office staff
+  availableSlots: 'Urgent cardiac consultations — call now',
+  bookingNote:
+    'New patients with urgent cardiac symptoms are seen within 24–48 hours. Routine new patient appointments are typically available within two weeks.',
+
+  // [DEMO] replace with real hero image alt text once image is provided
+  heroImageAlt:
+    'Twin Falls Heart & Vascular — Dr. Robert Patel, Interventional Cardiologist',
+
+  seoTitle: 'Twin Falls Heart & Vascular | Cardiologist Twin Falls Idaho',
+  seoDescription:
+    'Board-certified interventional cardiologist in Twin Falls, ID. Heart disease, AFib, cardiac catheterization. Emergency cardiac care available.',
+  seoKeywords:
+    'cardiologist Twin Falls Idaho, heart doctor Twin Falls, interventional cardiologist Magic Valley, atrial fibrillation treatment Idaho, heart disease Twin Falls, cardiac catheterization Twin Falls',
+
+  primaryColor: '#be123c',
+  secondaryColor: '#78716c',
+  accentColor: '#d97706',
+  bgLightColor: '#fff1f2',
+
+  medicalSpecialty: 'Cardiovascular',
+  schemaType: 'Cardiovascular',
+
+  // [DEMO] update JSON-LD with real data before go-live
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': ['MedicalOrganization', 'LocalBusiness'],
+    name: 'Twin Falls Heart & Vascular',
+    // [DEMO] replace with real website URL
+    url: 'https://tfheartandvascular.com',
+    // [DEMO] replace with real logo URL
+    logo: 'https://tfheartandvascular.com/logo.png',
+    // [DEMO] replace with real phone number
+    telephone: '(208) 555-0312',
+    // [DEMO] replace with real email address
+    email: 'info@tfheartandvascular.com',
+    address: {
+      '@type': 'PostalAddress',
+      // [DEMO] replace with real street address
+      streetAddress: '240 Hospital Drive Suite 305',
+      addressLocality: 'Twin Falls',
+      addressRegion: 'ID',
+      postalCode: '83301',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      // [DEMO] replace with real GPS coordinates verified from Google Maps
+      latitude: '42.5630',
+      longitude: '-114.4609',
+    },
+    medicalSpecialty: {
+      '@type': 'MedicalSpecialty',
+      name: 'Cardiovascular',
+    },
+    hasMap: 'https://maps.google.com/?q=240+Hospital+Drive+Twin+Falls+ID+83301',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        // [DEMO] replace with real office hours
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '17:00',
+      },
+    ],
+    employee: {
+      '@type': ['Physician', 'Person'],
+      // [DEMO] replace with real physician full name
+      name: 'Dr. Robert Patel',
+      // [DEMO] replace with real physician photo URL
+      image: 'https://tfheartandvascular.com/dr-patel.jpg',
+      jobTitle: 'Interventional Cardiologist',
+      description:
+        'Board-certified interventional cardiologist with 22 years of experience. Fellowship trained at Cleveland Clinic. MD from Johns Hopkins.',
+      medicalSpecialty: {
+        '@type': 'MedicalSpecialty',
+        name: 'Cardiovascular',
+      },
+      worksFor: {
+        '@type': ['MedicalOrganization', 'LocalBusiness'],
+        name: 'Twin Falls Heart & Vascular',
+      },
+      alumniOf: [
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Johns Hopkins University School of Medicine',
+        },
+        {
+          '@type': ['MedicalOrganization', 'LocalBusiness'],
+          name: 'Cleveland Clinic',
+        },
+      ],
+    },
+    sameAs: [
+      // [DEMO] replace with real directory/social profile URLs once claimed
+      'https://www.healthgrades.com/',
+      'https://www.zocdoc.com/',
+    ],
+  },
+};
